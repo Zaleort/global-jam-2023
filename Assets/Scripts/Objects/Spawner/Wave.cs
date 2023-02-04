@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Wave : MonoBehaviour
+public class Wave
 {
     public Lane[] lanes;
     public Enemy[] enemyPool;

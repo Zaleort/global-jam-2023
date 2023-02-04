@@ -7,6 +7,7 @@ public class SpawnerManager : MonoBehaviour
 {
     public Wave wave;
     public Spawner[] spawners;
+    public Enemy[] enemies;
     public int waveNumber = 1; 
     // Start is called before the first frame update
 
@@ -45,7 +46,7 @@ public class SpawnerManager : MonoBehaviour
     {
         if (waveNumber == 1)
         {
-            return new Wave(new Lane[] { Lane.Left }, new Enemy[] { }, 20, 2f);
+            return new Wave(new Lane[] { Lane.Left }, enemies, 20, 2f);
         }
 
         return null;

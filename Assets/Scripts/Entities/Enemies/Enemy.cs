@@ -24,13 +24,22 @@ public class Enemy : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
         Debug.Log("Enemigo Destruido");
-        Destroy(this);
-
+        if (CheckRootOrNucleusCollision(col))
+        {
+            Destroy(this);
+        }
     }
 
-    public void OnTriggerStay2D(Collider2D collision)
+    bool CheckRootOrNucleusCollision(Collider2D collider)
     {
-        Debug.Log("Enemigo Destruido");
-        Destroy(this);
+        Nucleus nucleus = collider.GetComponent<Nucleus>();
+        Player player = collider.GetComponent<Player>();
+
+        if (nucleus != null || player != null)
+        {
+            return true;
+        }
+
+        return false;
     }
 }
