@@ -20,7 +20,7 @@ public class SpawnerManager : MonoBehaviour
     }
     void Start()
     {
-        
+        SetNewWaveToSpawners();
     }
 
     // Update is called once per frame
@@ -29,7 +29,7 @@ public class SpawnerManager : MonoBehaviour
         
     }
 
-    void SetNewWaveToSpawners()
+   public void SetNewWaveToSpawners()
     {
         Wave newWave = GetNewWave();
         for (int i = 0; i < spawners.Length; i++)
