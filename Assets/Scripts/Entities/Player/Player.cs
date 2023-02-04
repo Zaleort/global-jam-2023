@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-
+    public float timeSinceLastAttack = RootConstants.RootCooldown;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,25 +14,33 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (timeSinceLastAttack < RootConstants.RootCooldown)
+        {
+            timeSinceLastAttack += Time.deltaTime;
+            return;
+        }
+
         if (Input.GetKeyDown(KeyCode.W))
         {
-            SendMessageUpwards("attack", 0);
+            SendMessageUpwards(GameControllerEvents.Attack, Lane.Up);
         }
 
         if (Input.GetKeyDown(KeyCode.S))
         {
-            SendMessageUpwards("attack", 0);
+            SendMessageUpwards(GameControllerEvents.Attack, Lane.Down);
         }
 
         if (Input.GetKeyDown(KeyCode.A))
         {
-            SendMessageUpwards("attack", 0);
+            SendMessageUpwards(GameControllerEvents.Attack, Lane.Left);
         }
 
         if (Input.GetKeyDown(KeyCode.D))
         {
-            SendMessageUpwards("attack", 0);
+            SendMessageUpwards(GameControllerEvents.Attack, Lane.Right);
         }
+
+        timeSinceLastAttack = 0f;
     }
 
 

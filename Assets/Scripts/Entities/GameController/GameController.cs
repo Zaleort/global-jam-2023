@@ -4,9 +4,24 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    public void Attack()
+    public void Attack(Lane lane)
     {
-        
+        switch (lane)
+        {
+            case Lane.Up:
+                //
+                break;
+            case Lane.Down:
+                //
+                break;
+            case Lane.Left:
+                //
+                break;
+            case Lane.Right:
+                //
+                break;
+
+        }
     }
 
     // Start is called before the first frame update
