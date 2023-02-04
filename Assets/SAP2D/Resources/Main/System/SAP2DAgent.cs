@@ -195,6 +195,14 @@ namespace SAP2D {
                 Gizmos.DrawWireSphere(transform.position, GetNextPointDistance);
             }
         }
+
+        public void setMovementSpeed(float speed) {
+            this.MovementSpeed = speed;
+        }
+
+        public void setTarget(Transform position) { 
+        this.Target=position;
+    }
     }
 }
 
