@@ -5,4 +5,5 @@ using UnityEngine;
 public class GameControllerEvents : MonoBehaviour
 {
     public static string Attack = "Attack";
+    public static string NewWave = "NewWave";
 }
