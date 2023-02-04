@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public BoxCollider2D boxCollider;
+    BoxCollider2D boxCollider;
     SpriteRenderer spriteRenderer;
 
     private float timeWhenAllowedNextShoot = 0f;
@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         spriteRenderer = this.gameObject.GetComponent<SpriteRenderer>();
-        boxCollider = GetComponent<BoxCollider2D>();
+        boxCollider = this.gameObject.GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
