@@ -24,6 +24,16 @@ public class GameController : MonoBehaviour
         }
     }
 
+    public void NewWave(int waveNumber)
+    {
+        // Show new wave message;
+    }
+
+    public void Death()
+    {
+        // Game Over
+    }
+
     // Start is called before the first frame update
     void Start()
     {
