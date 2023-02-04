@@ -4,48 +4,45 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float timeSinceLastAttack = RootConstants.RootCooldown;
-    // Start is called before the first frame update
-    public BoxCollider2D m_Collider;
+    public BoxCollider2D boxCollider;
     SpriteRenderer spriteRenderer;
 
     private float timeWhenAllowedNextShoot = 0f;
-    private float timeBetweenShooting = 1f;
+    private float timeBetweenShooting = RootConstants.RootCooldown;
+    public KeyCode key;
     void Start()
     {
         spriteRenderer = this.gameObject.GetComponent<SpriteRenderer>();
-        m_Collider = GetComponent<BoxCollider2D>();
+        boxCollider = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        checkIfShouldShoot();
+        CheckIfShouldShoot();
 
     }
 
-    private void Ataque()
+    private void EnableCollider()
     {
-        if (m_Collider.enabled)
-        {
-            spriteRenderer.enabled = false;
-            m_Collider.enabled = false;
-
-        }
-        else
-        {
-            spriteRenderer.enabled = true;
-            m_Collider.enabled = true;
-        }
+        boxCollider.enabled = true;
+        spriteRenderer.enabled = true;
     }
 
-    void checkIfShouldShoot()
+    private void DisableCollider()
+    {
+        boxCollider.enabled = false;
+        spriteRenderer.enabled = false;
+    }
+
+    void CheckIfShouldShoot()
     {
         if (timeWhenAllowedNextShoot <= Time.time)
         {
-            if (Input.GetKey(KeyCode.Space))
+            DisableCollider();
+            if (Input.GetKeyDown(key))
             {
-                Ataque();
+                EnableCollider();
                 timeWhenAllowedNextShoot = Time.time + timeBetweenShooting;
             }
         }
@@ -65,7 +62,7 @@ public class Player : MonoBehaviour
 
     IEnumerator Attack()
     {
-        m_Collider.enabled = true;
+        boxCollider.enabled = true;
         yield return new WaitForSeconds(1f);
     }
 }
