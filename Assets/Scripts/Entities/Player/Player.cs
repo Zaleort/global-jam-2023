@@ -7,47 +7,48 @@ public class Player : MonoBehaviour
     public float timeSinceLastAttack = RootConstants.RootCooldown;
     // Start is called before the first frame update
     public BoxCollider2D m_Collider;
+    SpriteRenderer spriteRenderer;
+
+    private float timeWhenAllowedNextShoot = 0f;
+    private float timeBetweenShooting = 1f;
     void Start()
     {
+        spriteRenderer = this.gameObject.GetComponent<SpriteRenderer>();
         m_Collider = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (timeSinceLastAttack < RootConstants.RootCooldown)
+        checkIfShouldShoot();
+
+    }
+
+    private void Ataque()
+    {
+        if (m_Collider.enabled)
         {
-            Debug.Log("UP");
+            spriteRenderer.enabled = false;
+            m_Collider.enabled = false;
+
+        }
+        else
+        {
+            spriteRenderer.enabled = true;
             m_Collider.enabled = true;
-            timeSinceLastAttack = 0f;
-            return;
         }
+    }
 
-        if (Input.GetKeyDown(KeyCode.W))
+    void checkIfShouldShoot()
+    {
+        if (timeWhenAllowedNextShoot <= Time.time)
         {
-            m_Collider.enabled = true;
-            SendMessageUpwards(GameControllerEvents.Attack, Lane.Up);
-            timeSinceLastAttack = 0f;
+            if (Input.GetKey(KeyCode.Space))
+            {
+                Ataque();
+                timeWhenAllowedNextShoot = Time.time + timeBetweenShooting;
+            }
         }
-
-        else if (Input.GetKeyDown(KeyCode.S))
-        {
-            SendMessageUpwards(GameControllerEvents.Attack, Lane.Down);
-            timeSinceLastAttack = 0f;
-        }
-
-        else if (Input.GetKeyDown(KeyCode.A))
-        {
-            SendMessageUpwards(GameControllerEvents.Attack, Lane.Left);
-            timeSinceLastAttack = 0f;
-        }
-
-        else if (Input.GetKeyDown(KeyCode.D))
-        {
-            SendMessageUpwards(GameControllerEvents.Attack, Lane.Right);
-            timeSinceLastAttack = 0f;
-        }
-
     }
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -62,4 +63,9 @@ public class Player : MonoBehaviour
         Destroy(this);
     }
 
+    IEnumerator Attack()
+    {
+        m_Collider.enabled = true;
+        yield return new WaitForSeconds(1f);
+    }
 }
