@@ -23,24 +23,27 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W))
         {
             SendMessageUpwards(GameControllerEvents.Attack, Lane.Up);
+            timeSinceLastAttack = 0f;
         }
 
-        if (Input.GetKeyDown(KeyCode.S))
+        else if (Input.GetKeyDown(KeyCode.S))
         {
             SendMessageUpwards(GameControllerEvents.Attack, Lane.Down);
+            timeSinceLastAttack = 0f;
         }
 
-        if (Input.GetKeyDown(KeyCode.A))
+        else if (Input.GetKeyDown(KeyCode.A))
         {
             SendMessageUpwards(GameControllerEvents.Attack, Lane.Left);
+            timeSinceLastAttack = 0f;
         }
 
-        if (Input.GetKeyDown(KeyCode.D))
+        else if (Input.GetKeyDown(KeyCode.D))
         {
             SendMessageUpwards(GameControllerEvents.Attack, Lane.Right);
+            timeSinceLastAttack = 0f;
         }
 
-        timeSinceLastAttack = 0f;
     }
 
 
