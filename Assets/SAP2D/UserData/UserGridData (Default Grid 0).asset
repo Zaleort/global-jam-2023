@@ -12,4 +12,60 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97b56a97472cc504ea0ac1a89a218d45, type: 3}
   m_Name: UserGridData (Default Grid 0)
   m_EditorClassIdentifier: 
-  UnwalkableTiles: []
+  UnwalkableTiles:
+  - isWalkable: 0
+    walkableLock: 1
+    gridX: 1
+    gridY: 6
+  - isWalkable: 0
+    walkableLock: 1
+    gridX: 2
+    gridY: 6
+  - isWalkable: 0
+    walkableLock: 1
+    gridX: 3
+    gridY: 6
+  - isWalkable: 0
+    walkableLock: 1
+    gridX: 4
+    gridY: 6
+  - isWalkable: 0
+    walkableLock: 1
+    gridX: 5
+    gridY: 6
+  - isWalkable: 0
+    walkableLock: 1
+    gridX: 5
+    gridY: 5
+  - isWalkable: 0
+    walkableLock: 1
+    gridX: 5
+    gridY: 4
+  - isWalkable: 0
+    walkableLock: 1
+    gridX: 5
+    gridY: 3
+  - isWalkable: 0
+    walkableLock: 1
+    gridX: 5
+    gridY: 2
+  - isWalkable: 0
+    walkableLock: 1
+    gridX: 5
+    gridY: 1
+  - isWalkable: 0
+    walkableLock: 1
+    gridX: 6
+    gridY: 1
+  - isWalkable: 0
+    walkableLock: 1
+    gridX: 7
+    gridY: 1
+  - isWalkable: 0
+    walkableLock: 1
+    gridX: 8
+    gridY: 1
+  - isWalkable: 0
+    walkableLock: 1
+    gridX: 9
+    gridY: 1
