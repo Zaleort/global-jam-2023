@@ -2510,7 +2510,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -8426,7 +8426,7 @@ PrefabInstance:
     - target: {fileID: 4377340667158424121, guid: 90a2ab7d8eb7d584897c0d2ae1e4d4f4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.65
+      value: 5.25
       objectReference: {fileID: 0}
     - target: {fileID: 4377340667158424121, guid: 90a2ab7d8eb7d584897c0d2ae1e4d4f4,
         type: 3}
@@ -9131,6 +9131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1816223871}
   - component: {fileID: 1816223870}
+  - component: {fileID: 1816223872}
   m_Layer: 0
   m_Name: background
   m_TagString: Untagged
@@ -9205,6 +9206,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1816223872
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816223869}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f10c2fc48e90ed540b1729b6f7f24d2c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!61 &1828163724 stripped
 BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 4377340667158424118, guid: 90a2ab7d8eb7d584897c0d2ae1e4d4f4,
@@ -11286,17 +11307,17 @@ PrefabInstance:
     - target: {fileID: 5636700446405853651, guid: e039b730f494e594fa2236253e4116e0,
         type: 3}
       propertyPath: m_Color.b
-      value: 1
+      value: 0.81301177
       objectReference: {fileID: 0}
     - target: {fileID: 5636700446405853651, guid: e039b730f494e594fa2236253e4116e0,
         type: 3}
       propertyPath: m_Color.g
-      value: 1
+      value: 0.81301177
       objectReference: {fileID: 0}
     - target: {fileID: 5636700446405853651, guid: e039b730f494e594fa2236253e4116e0,
         type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0.8490566
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e039b730f494e594fa2236253e4116e0, type: 3}

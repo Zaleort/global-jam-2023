@@ -82,15 +82,15 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 21219210, guid: 013079affae5ba24bad744f569696fab, type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 21219210, guid: 013079affae5ba24bad744f569696fab, type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 21219210, guid: 013079affae5ba24bad744f569696fab, type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 21219210, guid: 013079affae5ba24bad744f569696fab, type: 3}
       propertyPath: m_DrawMode
