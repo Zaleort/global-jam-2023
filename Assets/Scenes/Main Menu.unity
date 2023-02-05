@@ -2332,7 +2332,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: JUEGO
+  m_Text: Seed Guardian
 --- !u!222 &1694546675
 CanvasRenderer:
   m_ObjectHideFlags: 0
