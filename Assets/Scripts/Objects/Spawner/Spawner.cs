@@ -22,11 +22,13 @@ public class Spawner : MonoBehaviour
     {
         if (Time.time > nextActionTime)
         {
+            Debug.Log("Time");
             if (CheckEndOfWave())
             {
                 Debug.Log("End of Wave");
                 SendMessageUpwards("EndOfWave", wave.level);
                 wave = null;
+                nextActionTime += period;
                 return;
             }
 
@@ -38,6 +40,11 @@ public class Spawner : MonoBehaviour
     public void StartWave(Wave wave)
     {
         this.wave = wave.Clone();
+    }
+
+    public void StopWave()
+    {
+        this.wave = null;
     }
 
     public void InstantiateFromPool()
@@ -58,6 +65,7 @@ public class Spawner : MonoBehaviour
         enemyToInstantiate.GetComponent<SAP2DAgent>().setMovementSpeed(wave.baseSpeed);
         enemyToInstantiate.GetComponent<SAP2DAgent>().setTarget(Target);
 
+        Debug.Log("Instantiated");
         wave.quantity--;
     }
 
