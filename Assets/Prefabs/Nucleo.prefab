@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5636700446405853651}
   - component: {fileID: 5636700446405853228}
   - component: {fileID: 5636700446405853649}
+  - component: {fileID: 7409863612427841112}
   m_Layer: 7
   m_Name: Nucleo
   m_TagString: Untagged
@@ -134,3 +135,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!111 &7409863612427841112
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5636700446405853229}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: ca4d22277f5ce3345acb51b5d0db2661, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: ca4d22277f5ce3345acb51b5d0db2661, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
