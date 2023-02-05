@@ -49,6 +49,14 @@ public class SpawnerManager : MonoBehaviour
         }
     }
 
+    public void StopSpawners()
+    {
+        for (int i = 0; i < spawners.Length; i++)
+        {
+            spawners[i].StopWave();
+        }
+    }
+
     Wave GetNewWave()
     {
         if (waveNumber == 1)

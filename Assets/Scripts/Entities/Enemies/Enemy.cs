@@ -10,7 +10,6 @@ public class Enemy : MonoBehaviour
     {
         if (CheckRootOrNucleusCollision(col))
         {
-            Debug.Log("Enemigo Destruido");
             Destroy(this.gameObject);
         }
     }
@@ -19,7 +18,6 @@ public class Enemy : MonoBehaviour
     {
         if (CheckRootOrNucleusCollision(col))
         {
-            Debug.Log("Enemigo Destruido");
             Destroy(this.gameObject);
         }
     }
@@ -28,7 +26,6 @@ public class Enemy : MonoBehaviour
     {
         if (CheckRootOrNucleusCollision(col))
         {
-            Debug.Log("Enemigo Destruido");
             Destroy(this.gameObject);
         }
     }
@@ -38,7 +35,6 @@ public class Enemy : MonoBehaviour
         Nucleus nucleus = collision.gameObject.GetComponent<Nucleus>();
         Player player = collision.gameObject.GetComponent<Player>();
 
-        Debug.Log(collision.ToString());
         if (nucleus != null || player != null)
         {
             return true;

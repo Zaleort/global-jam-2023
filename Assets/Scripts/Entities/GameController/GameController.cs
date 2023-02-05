@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
+    SpawnerManager spawnerManager;
     public void Attack(Lane lane)
     {
         switch (lane)
@@ -33,13 +34,14 @@ public class GameController : MonoBehaviour
     public void Death()
     {
         // Game Over
-        SceneManager.LoadScene(2);
+        spawnerManager.StopSpawners();
+        SceneManager.LoadScene(2, LoadSceneMode.Single);
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        spawnerManager = this.GetComponentInChildren<SpawnerManager>();
     }
 
     // Update is called once per frame

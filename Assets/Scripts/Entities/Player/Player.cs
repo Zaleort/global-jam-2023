@@ -24,17 +24,4 @@ public class Player : MonoBehaviour
         boxCollider.enabled = false;
         spriteRenderer.enabled = false;
     }
-
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        Debug.Log("Enemigo Destruido");
-        Destroy(this);
-
-    }
-
-    public void OnTriggerStay2D(Collider2D collision)
-    {
-        Debug.Log("Enemigo Destruido");
-        Destroy(this);
-    }
 }
