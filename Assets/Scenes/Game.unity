@@ -5001,6 +5001,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Agent
       objectReference: {fileID: 0}
+    - target: {fileID: 7371354578264067247, guid: 85966ea59bb0d4f498d8687ce79e8480,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7371354578264382935, guid: 85966ea59bb0d4f498d8687ce79e8480,
         type: 3}
       propertyPath: m_RootOrder
@@ -5009,12 +5014,12 @@ PrefabInstance:
     - target: {fileID: 7371354578264382935, guid: 85966ea59bb0d4f498d8687ce79e8480,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.57
+      value: -13.87
       objectReference: {fileID: 0}
     - target: {fileID: 7371354578264382935, guid: 85966ea59bb0d4f498d8687ce79e8480,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.2551769
+      value: 7.66
       objectReference: {fileID: 0}
     - target: {fileID: 7371354578264382935, guid: 85966ea59bb0d4f498d8687ce79e8480,
         type: 3}
