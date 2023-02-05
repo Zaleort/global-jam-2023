@@ -25,7 +25,7 @@ public class Spawner : MonoBehaviour
             if (CheckEndOfWave())
             {
                 Debug.Log("End of Wave");
-                SendMessageUpwards("EndOfWave", lane);
+                SendMessageUpwards("EndOfWave", wave.level);
                 wave = null;
                 return;
             }
@@ -37,7 +37,7 @@ public class Spawner : MonoBehaviour
 
     public void StartWave(Wave wave)
     {
-        this.wave = wave;
+        this.wave = wave.Clone();
     }
 
     public void InstantiateFromPool()

@@ -17,9 +17,9 @@ public class Nucleus : MonoBehaviour
         
     }
 
-    void OnTriggerEnter2D(Collider2D col)
+    void OnCollisionEnter2D(Collision2D col)
     {
-        Enemy enemy = col.GetComponent<Enemy>();
+        Enemy enemy = col.gameObject.GetComponent<Enemy>();
         if (enemy != null)
         {
             health--;

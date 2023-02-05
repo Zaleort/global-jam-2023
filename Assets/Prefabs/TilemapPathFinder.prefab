@@ -47,20 +47,20 @@ MonoBehaviour:
   GraphDrawers:
   - ShowGrid: 1
     ShowGridInfo: 1
-    ShowGridParameters: 1
+    ShowGridParameters: 0
     ShowPathfindingSettings: 1
     ShowGridGraphSettigs: 0
     ScaleLvl: 1
   EditorSettings: {fileID: 11400000, guid: f54fe2e0866d59148bb49fcb7b6fd41b, type: 2}
   grids:
-  - GridName: Default Grid 0
+  - GridName: Map1
     UsePhysics2D: 1
     ObstaclesLayer:
       serializedVersion: 2
       m_Bits: 16
-    UserGridData: {fileID: 11400000, guid: bbf62978efa54e74c816a085cdd21c12, type: 2}
-    gridPosition: {x: -9.793638, y: -5.0281506, z: 0}
+    UserGridData: {fileID: 0}
+    gridPosition: {x: 0, y: 0, z: 0}
     gridPivot: 0
-    width: 20
+    width: 10
     height: 10
     tileDiameter: 1
