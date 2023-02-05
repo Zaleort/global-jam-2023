@@ -29,9 +29,9 @@ public class PlayerManager : MonoBehaviour
                 timeWhenAllowedNextShoot = Time.time + timeBetweenShooting;
             }
 
-            if (Input.GetKeyDown(KeyCode.S))
+            if (Input.GetKeyDown(KeyCode.UpArrow))
             {
-                EnableCollider(KeyCode.S);
+                EnableCollider(KeyCode.UpArrow);
                 timeWhenAllowedNextShoot = Time.time + timeBetweenShooting;
             }
 
@@ -41,9 +41,9 @@ public class PlayerManager : MonoBehaviour
                 timeWhenAllowedNextShoot = Time.time + timeBetweenShooting;
             }
 
-            if (Input.GetKeyDown(KeyCode.D))
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                EnableCollider(KeyCode.D);
+                EnableCollider(KeyCode.LeftArrow);
                 timeWhenAllowedNextShoot = Time.time + timeBetweenShooting;
             }
         }

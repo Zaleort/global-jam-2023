@@ -6,6 +6,8 @@ public class Player : MonoBehaviour
 {
     BoxCollider2D boxCollider;
     SpriteRenderer spriteRenderer;
+    public Sprite restSprite;
+    public Sprite activeSprite;
     public KeyCode key;
     void Start()
     {
@@ -16,12 +18,12 @@ public class Player : MonoBehaviour
     public void EnableCollider()
     {
         boxCollider.enabled = true;
-        spriteRenderer.enabled = true;
+        spriteRenderer.sprite = activeSprite;
     }
 
     public void DisableCollider()
     {
         boxCollider.enabled = false;
-        spriteRenderer.enabled = false;
+        spriteRenderer.sprite = restSprite;
     }
 }
