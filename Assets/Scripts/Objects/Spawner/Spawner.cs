@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    private float nextActionTime = 0.0f;
+    private float timeSinceLastAction = 0.1f;
     public float period = 0.1f;
     public Transform Target;
 
@@ -20,7 +20,7 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.time > nextActionTime)
+        if (timeSinceLastAction >= period)
         {
             Debug.Log("Time");
             if (CheckEndOfWave())
@@ -28,13 +28,14 @@ public class Spawner : MonoBehaviour
                 Debug.Log("End of Wave");
                 SendMessageUpwards("EndOfWave", wave.level);
                 wave = null;
-                nextActionTime += period;
                 return;
             }
 
-            nextActionTime += period;
+            timeSinceLastAction = 0f;
             InstantiateFromPool();
         }
+
+        timeSinceLastAction += Time.deltaTime;
     }
 
     public void StartWave(Wave wave)
