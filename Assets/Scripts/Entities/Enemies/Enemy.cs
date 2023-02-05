@@ -4,37 +4,41 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    Collider2D player;
     private int health;
-    private (int x, int y) position;
-    private float speed;
 
-    // Start is called before the first frame update
-    void Start()
+    public void OnCollisionEnter2D(Collision2D col)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        Debug.Log("Enemigo Destruido");
         if (CheckRootOrNucleusCollision(col))
         {
-            Destroy(this);
+            Debug.Log("Enemigo Destruido");
+            Destroy(this.gameObject);
         }
     }
 
-    bool CheckRootOrNucleusCollision(Collider2D collider)
+    public void OnCollisionStay2D(Collision2D col)
     {
-        Nucleus nucleus = collider.GetComponent<Nucleus>();
-        Player player = collider.GetComponent<Player>();
+        if (CheckRootOrNucleusCollision(col))
+        {
+            Debug.Log("Enemigo Destruido");
+            Destroy(this.gameObject);
+        }
+    }
 
+    public void OnCollisionExit2D(Collision2D col)
+    {
+        if (CheckRootOrNucleusCollision(col))
+        {
+            Debug.Log("Enemigo Destruido");
+            Destroy(this.gameObject);
+        }
+    }
+
+    bool CheckRootOrNucleusCollision(Collision2D collision)
+    {
+        Nucleus nucleus = collision.gameObject.GetComponent<Nucleus>();
+        Player player = collision.gameObject.GetComponent<Player>();
+
+        Debug.Log(collision.ToString());
         if (nucleus != null || player != null)
         {
             return true;

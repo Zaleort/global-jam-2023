@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class RootConstants : MonoBehaviour
 {
-    public static float RootCooldown = 0.25f;
+    public static float RootCooldown = 0.15f;
 }

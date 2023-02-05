@@ -6,9 +6,6 @@ public class Player : MonoBehaviour
 {
     BoxCollider2D boxCollider;
     SpriteRenderer spriteRenderer;
-
-    private float timeWhenAllowedNextShoot = 0f;
-    private float timeBetweenShooting = RootConstants.RootCooldown;
     public KeyCode key;
     void Start()
     {
@@ -16,37 +13,18 @@ public class Player : MonoBehaviour
         boxCollider = this.gameObject.GetComponent<BoxCollider2D>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        CheckIfShouldShoot();
-
-    }
-
-    private void EnableCollider()
+    public void EnableCollider()
     {
         boxCollider.enabled = true;
         spriteRenderer.enabled = true;
     }
 
-    private void DisableCollider()
+    public void DisableCollider()
     {
         boxCollider.enabled = false;
         spriteRenderer.enabled = false;
     }
 
-    void CheckIfShouldShoot()
-    {
-        if (timeWhenAllowedNextShoot <= Time.time)
-        {
-            DisableCollider();
-            if (Input.GetKeyDown(key))
-            {
-                EnableCollider();
-                timeWhenAllowedNextShoot = Time.time + timeBetweenShooting;
-            }
-        }
-    }
     void OnTriggerEnter2D(Collider2D col)
     {
         Debug.Log("Enemigo Destruido");
@@ -58,11 +36,5 @@ public class Player : MonoBehaviour
     {
         Debug.Log("Enemigo Destruido");
         Destroy(this);
-    }
-
-    IEnumerator Attack()
-    {
-        boxCollider.enabled = true;
-        yield return new WaitForSeconds(1f);
     }
 }

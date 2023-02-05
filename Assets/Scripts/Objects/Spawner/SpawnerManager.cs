@@ -46,7 +46,29 @@ public class SpawnerManager : MonoBehaviour
     {
         if (waveNumber == 1)
         {
-            return new Wave(new Lane[] { Lane.Left }, enemies, 20, 2f);
+            return new Wave(new Lane[] { Lane.Left, Lane.Down }, enemies, 20, 2f);
+        }
+
+        if (waveNumber == 2)
+        {
+            return new Wave(new Lane[] { Lane.Left, Lane.Down, Lane.Right }, enemies, 20, 2f);
+        }
+
+        if (waveNumber == 3)
+        {
+            return new Wave(new Lane[] { Lane.Left, Lane.Down, Lane.Right, Lane.Up }, enemies, 20, 2.25f);
+        }
+
+        if (waveNumber == 4)
+        {
+            return new Wave(new Lane[] { Lane.Left, Lane.Down, Lane.Right, Lane.Up }, enemies, 20, 2.5f);
+        }
+
+        if (waveNumber > 5)
+        {
+            float speed = 2 + (0.15f * waveNumber);
+            int enemiesNumber = 20;
+            return new Wave(new Lane[] { Lane.Left, Lane.Down, Lane.Right, Lane.Up }, enemies, enemiesNumber, speed);
         }
 
         return null;

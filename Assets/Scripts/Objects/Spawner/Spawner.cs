@@ -38,9 +38,6 @@ public class Spawner : MonoBehaviour
     public void StartWave(Wave wave)
     {
         this.wave = wave;
-        Debug.Log(this.wave.lanes[0]);
-        Debug.Log(this.wave.enemyPool[0]);
-        Debug.Log(this.wave.baseSpeed);
     }
 
     public void InstantiateFromPool()
@@ -53,7 +50,6 @@ public class Spawner : MonoBehaviour
         int length = wave.enemyPool.Length;
         if (length == 0)
         {
-            Debug.Log("No enemies");
             return;
         }
 
@@ -62,7 +58,6 @@ public class Spawner : MonoBehaviour
         enemyToInstantiate.GetComponent<SAP2DAgent>().setMovementSpeed(wave.baseSpeed);
         enemyToInstantiate.GetComponent<SAP2DAgent>().setTarget(Target);
 
-        Debug.Log("Instantiated");
         wave.quantity--;
     }
 

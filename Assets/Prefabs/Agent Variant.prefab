@@ -9,7 +9,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 146010, guid: 013079affae5ba24bad744f569696fab, type: 3}
       propertyPath: m_Name
-      value: Agent Variant
+      value: Agent
+      objectReference: {fileID: 0}
+    - target: {fileID: 146010, guid: 013079affae5ba24bad744f569696fab, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 453410, guid: 013079affae5ba24bad744f569696fab, type: 3}
       propertyPath: m_RootOrder
@@ -64,6 +68,11 @@ PrefabInstance:
         type: 3}
       propertyPath: CanSearch
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 299107267298450035, guid: 013079affae5ba24bad744f569696fab,
+        type: 3}
+      propertyPath: MovementSpeed
+      value: 3.05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 013079affae5ba24bad744f569696fab, type: 3}
@@ -120,18 +129,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.2, y: 0.2}
   m_EdgeRadius: 0
---- !u!114 &3681013382672397727
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7371354578264067247}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b63418767bc672647ad26f8fb2e4af64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &9073356454727308666
 MonoBehaviour:
   m_ObjectHideFlags: 0
